@@ -96,7 +96,9 @@ app.use("/api/project",project_routes);
 
 const razorpay_routes = require('./src/routes/basic_routes/razorpay_order')(router)
 app.use("/api/razorpay", razorpay_routes);
-
+app.get("/", (req, res) => {
+    return res.send("Welcome To API");
+  });
 app.listen(PORT, function () {
     console.log(`Running the server on port ${PORT} `); 
 });
